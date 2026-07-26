@@ -1,6 +1,7 @@
 
 '''
-problem :
+problem : Two Sum II  (brute force approach)
+
 
 You're tasked with figuring out the pair of elements where arr[p] + arr[q] add up to a certain number. (To try this problem out, check the Two Sum and Sorted Two Sum problems here.)
 
@@ -12,16 +13,14 @@ arr = [1, 2, 3, 4, 5]
 
 #task : return two number whose sum is equal to 6
 
-def find(arr: list):
-    
-    for i in range(len(arr)):
+def find(numbers, target):
+    for i, i_value in enumerate(numbers, start=1):              #start from 1 because of problem statement 1-based indexing
+        for j, j_value in enumerate(numbers[i:], start=i+1): 
+            if  i_value + j_value == target:
+                return i,j
 
-        for j in range(len(arr)):
-
-            if i != j and arr[i] + arr[j] == 6:
-
-                return i, j
-
-
-values = find(arr)
+values = find(arr, target=3)
 print(values)
+
+
+
