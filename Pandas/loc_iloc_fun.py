@@ -25,10 +25,9 @@ a_age = df.loc[0,'age']
 print(f'Alice is {a_age} year old')
 
 print("\n")
-result = df.loc[df['age']>20]
+result = df.loc[df['age']>20] 
 print(f"ages greater than 20 are \n {result}")
 print('\n') 
-
 
 # iloc[]
 '''

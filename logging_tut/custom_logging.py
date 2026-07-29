@@ -22,8 +22,15 @@ def setup_logger(name: str = None):
     if name is None:
         name = __name__  # Use caller's module name  # Built-in variable that stores module’s name
     
-    logger = logging.getLogger(name)
-    
+    logger = logging.getLogger(name)           # Using logging.getLogger(name) with a meaningful name like "ingest" or "document_loader" creates a named logger hierarchy:
+
+    '''root
+         └── ingest
+         └── document_loader
+         └── api.routes
+    '''
+ 
+
     # 1: Prevent duplicate handler
     if logger.handlers:
         return logger
@@ -48,6 +55,15 @@ def setup_logger(name: str = None):
         encoding="utf-8"
     )
 
+    '''
+    3. RotatingFileHandler (5MB max, 3 backups)
+Without rotation, log files grow forever. RotatingFileHandler solves this:
+
+automation.log       ← Current log (max 5MB)
+automation.log.1     ← Previous file (backup 1)
+automation.log.2     ← Older backup
+automation.log.3     ← Oldest backup (after this, .1 is deleted)
+    '''
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
     

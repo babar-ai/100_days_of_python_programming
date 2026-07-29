@@ -1,19 +1,23 @@
 import threading 
 import time 
 
-done = False
+start = time.perf_counter()
 
+def do_something():
+    print("Sleeping 1 second .........")
+    time.sleep(1)
+    print("Done Sleeping")
 
-def worker():
+t1 = threading.Thread(target=do_something)
+t2 = threading.Thread(target=do_something)
 
-    counter = 0
-    while not done:
-        time.sleep(1)
-        counter += 1
-        print(f"{counter}")
+t1.start()
+t2.start()
 
+t1.join()
+t2.join()
 
-threading.Thread(target=worker).start()
+finish = time.perf_counter()
 
-input("press any key to stop>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ")
-done = True  
+print(f"Finished in {finish - start} second(s)")
+
