@@ -100,6 +100,7 @@ A **daemon thread** runs in the background and is **automatically killed** when 
 ```python
 t = threading.Thread(target=worker, daemon=True)
 t.start()
+
 # Main program exits → daemon thread is killed automatically
 ```
 
@@ -242,7 +243,8 @@ def task(n):
     return n * n
 
 with ThreadPoolExecutor(max_workers=4) as executor:
-    results = executor.map(task, [1, 2, 3, 4, 5])
+    mylist = [1, 2, 3, 4, 5]
+    results = executor.map(task, mylist)
     print(list(results))  # [1, 4, 9, 16, 25]
 ```
 
