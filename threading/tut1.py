@@ -21,3 +21,11 @@ finish = time.perf_counter()
 
 print(f"Finished in {finish - start} second(s)")
 
+'''
+# output
+Sleeping 1 second .........
+Sleeping 1 second .........
+Done Sleeping
+Done Sleeping
+Finished in 1.0017716999864206 second(s)
+'''

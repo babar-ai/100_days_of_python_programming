@@ -97,7 +97,7 @@ def run_fetch_url_with_thread_pool_executor():
     start_time  = time.time()
 
     with ThreadPoolExecutor(max_workers=5) as executor:
-        results = executor.map(fetch_url_content, urls)
+        results = executor.map(fetch_url_content, urls)        # Use when you want more control over individual tasks.
         for result in results:
             print(result)
 
@@ -106,6 +106,7 @@ def run_fetch_url_with_thread_pool_executor():
     print(f"\n Time taken with thread pool executor: {end_time - start_time}")
 
 if __name__ == "__main__":
+    
     run_fetch_url_with_out_threading()
     run_fetch_url_with_threading()
     run_fetch_url_with_thread_pool_executor()

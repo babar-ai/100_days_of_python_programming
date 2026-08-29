@@ -246,7 +246,35 @@ with ThreadPoolExecutor(max_workers=4) as executor:
     mylist = [1, 2, 3, 4, 5]
     results = executor.map(task, mylist)
     print(list(results))  # [1, 4, 9, 16, 25]
+
 ```
+Here, pool simply means a group of reusable resources.
+
+In ThreadPoolExecutor, a thread pool means:
+
+A group of worker threads that are created and kept available so they can be reused for multiple tasks.
+
+Why call it a "pool"?
+
+Think about a swimming pool 🏊.
+
+You don't build a new swimming pool every time someone wants to swim.
+
+Without a pool
+
+Request A → create Thread → finish → destroy
+Request B → create Thread → finish → destroy
+Request C → create Thread → finish → destroy
+
+Lots of thread creation/destruction.
+
+With a pool
+
+So the key idea is:
+
+Pool = a reusable collection of workers/resources.
+
+And that's why ThreadPoolExecutor is called an executor: you give it tasks, and it decides which available worker thread should execute each task.
 
 ### `submit()` vs `map()`
 
@@ -328,3 +356,4 @@ threading.enumerate()     # List all active threads
 ---
 
 *Last updated: 2026-07-18 | For interview revision use only*
+
