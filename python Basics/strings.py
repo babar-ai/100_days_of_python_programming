@@ -11,7 +11,6 @@ s = "ali is good boy"
 mystring = [ch.lower() for ch in s]
 print(f"my lower string are \n {mystring}")
 
-
 # =============================================================================
 # 1. MODERN STRING FORMATTING (f-strings)
 # =============================================================================

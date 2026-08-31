@@ -53,7 +53,6 @@ print(user)
 user_dict = user.dict()
 print(user_dict)    
 
-
 #convet inot json()
 user_json = user.json()
 print(user_json)               #json format
