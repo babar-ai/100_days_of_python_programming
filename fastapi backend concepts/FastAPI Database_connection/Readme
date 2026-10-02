@@ -29,7 +29,6 @@ Depends?
 
 In FastAPI, Depends is a dependency injection system that allows you to define reusable logic or components and inject them into your endpoints or
  other functions. It is imported from fastapi as Depends.
- 
 What is Dependency Injection?
 Dependency Injection is a design pattern where dependencies (like reusable functions, database connections, or authentication logic) are "injected" into a function or
  class instead of being hardcoded. This makes your code modular, reusable, and easier to test.

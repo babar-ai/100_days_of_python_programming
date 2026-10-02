@@ -95,5 +95,4 @@ It’s the bridge that allows different systems (server, client, database) to ex
 
 FastAPI makes this process seamless with automatic serialization/deserialization powered by Pydantic and Starlette.
 
-
 '''
